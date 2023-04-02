@@ -1,0 +1,193 @@
+{% extends 'nav.html' %}
+{% block nav %}
+<style>
+  @import url(https://fonts.googleapis.com/css?family=Dancing+Script);
+
+* {
+    margin: 0;
+}
+
+body {
+    background-color: #e8f5ff;
+    font-family: Arial;
+    overflow: hidden;
+}
+
+/* NavbarTop */
+.navbar-top {
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0px 4px 8px 0px grey;
+    height: 70px;
+}
+
+.title {
+    font-family: 'Dancing Script', cursive;
+    padding-top: 15px;
+    position: absolute;
+    left: 45%;
+}
+
+.navbar-top ul {
+    float: right;
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 18px 50px 0 40px;
+}
+
+.navbar-top ul li {
+    float: left;
+}
+
+.navbar-top ul li a {
+    color: #333;
+    padding: 14px 16px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.icon-count {
+    background-color: #ff0000;
+    color: #fff;
+    float: right;
+    font-size: 11px;
+    left: -25px;
+    padding: 2px;
+    position: relative;
+}
+.main {
+    margin-top: 2%;
+    margin-left: 29%;
+    font-size: 28px;
+    padding: 0 10px;
+    width: 58%;
+}
+
+.main h2 {
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.main .card {
+    background-color: #fff;
+    border-radius: 18px;
+    box-shadow: 1px 1px 8px 0 grey;
+    height: auto;
+    margin-bottom: 20px;
+    padding: 20px 0 20px 50px;
+}
+
+.main .card table {
+    border: none;
+    font-size: 16px;
+    height: 270px;
+    width: 80%;
+}
+
+.edit {
+    position: absolute;
+    color: #e7e7e8;
+    right: 14%;
+}
+
+
+</style>
+
+<div class="navbar-top">
+  <div class="title">
+      <h1>Profile</h1>
+  </div>
+
+  <!-- Navbar -->
+  <ul>
+      
+      <li>
+          <a href="#sign-out">
+              <i class="fa fa-sign-out-alt fa-2x"></i>
+          </a>
+      </li>
+  </ul>
+  <!-- End -->
+</div>
+<!-- End -->
+<!-- End -->
+
+<!-- Main -->
+<div class="main">
+  <h2>IDENTITY</h2>
+  <div class="card">
+      <div class="card-body">
+          <i class="fa fa-pen fa-xs edit"></i>
+          <table>
+              <tbody>
+                  <tr>
+                      <td> First Name</td>
+                      <td>:</td>
+                      <td><b>{{request.user.first_name}}</td></b>
+                  </tr>
+                  <tr>
+                      <td> Last Name</td>
+                      <td>:</td>
+                      <td><b>{{request.user.last_name}}</td></b>
+                  </tr>
+                  <tr>
+                      <td>Address</td>
+                      <td>:</td>
+                      <td><b>{{request.user.address}}</td></b>
+                  </tr>
+                  <tr>
+                      <td>Email</td>
+                      <td>:</td>
+                      <td><b>{{request.user.email}}</td></b>
+                  </tr>
+                  <tr>
+                      <td>Phone</td>
+                      <td>:</td>
+                      <td><b>{{request.user.phone}}</td></b>
+                  </tr>
+                  
+              </tbody>
+          </table>
+          
+      </div>
+  </div>
+ 
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {% comment %} <div class="row"> 
+  
+  <div class="col-2" style="height: 200%;: 2px solid black;">
+    <div class="card" style="width: 200%;"> 
+     
+      <img  src="{{request.user.bio_user.profile_pic.url}}">
+      <div class="card-body">
+        <h5 class="card-title">first name: {{request.user.first_name}}</h5>
+        <h5 class="card-title">last name: {{request.user.last_name}}</h5>
+        <h5 class="card-title">email: {{request.user.email}}</h5>
+        <h5 class="card-title">phone: {{request.user.phone}}</h5>
+        <h5 class="card-title">address: {{request.user.address}}</h5>
+      </div>
+
+          </ul>   {% endcomment %}
+          {% endblock %}

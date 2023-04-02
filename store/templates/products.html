@@ -1,0 +1,19 @@
+{% extends 'navbar.html' %}
+{% block nav %}
+     <div class="col-3">
+      {% for i in data %}
+      <div class="card mt-2" style="width: 18rem;">
+      <img class="card-img-top" src="{{i.Mobile.url}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{i.Name}}</h5>
+        
+
+        <h6 class="card-text"><span class="material-symbols-rounded">
+          currency_rupee
+          </span>{{i.prize}}</h6>
+      </div>
+    </div>
+    {% endfor %}
+  </div> 
+
+{% endblock %}

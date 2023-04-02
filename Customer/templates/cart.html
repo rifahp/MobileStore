@@ -1,0 +1,298 @@
+{% extends 'nav.html' %}
+{% block nav %}
+<style>
+  body{
+    background: #f4f5f7;
+    margin-top:20px;
+}
+.cart-container {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 30px;
+}
+.cart-container .cart-body {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 30px 0 20px;
+  margin: 20px 0 30px;
+}
+</style>
+{% for i in data %}
+
+<div class="container">  
+  <div class="contentbar">                
+          <!-- Start row -->
+          <div class="row">
+              <!-- Start col -->
+              <div class="col-md-12 col-lg-12 col-xl-12">
+                  <div class="card m-b-30">
+                      <div class="card-header">
+                          <h5 class="text-cener">Cart</h5>
+                          
+                      </div>
+                      <div class="card-body">
+                          <div class="row justify-content-center">
+                              <div class="col-lg-10 col-xl-8">
+                                  <div class="cart-container">
+                                      <div class="cart-head">
+                                          <div class="table-responsive">
+                                              <table class="table table-borderless">
+                                                  <thead>
+                                                      <tr>
+                                                          <th scope="col">#</th>
+                                                          <th scope="col"></th>                                               
+                                                          <th scope="col"> Photo</th>
+                                                          <th scope="col">Product</th>
+                                                          <th scope="col">Qty</th>
+                                                          <th scope="col">Price</th>
+                                                          <th scope="col" class="text-right">Total</th>
+                                                      </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                      <tr>
+                                                          <th scope="row">1</th>
+                                                          <td><a href="#" class="text-danger"><i class="ri-delete-bin-3-line"></i></a></td>
+                                                          <td><img src="{{i.mobile.Mobile.url}}" class="img-fluid" width="150" alt="product"></td>
+                                                          <td><b>{{i.mobile.Name}}</td></b>
+                                                          <td>
+                                                              <div class="form-group mb-0">
+                                                                  <input type="number" class="form-control cart-qty" name="cartQty1" id="cartQty1" value="1">
+                                                              </div>
+                                                          </td>
+                                                          <td>₹{{i.mobile.prize}}</td>
+                                                          <td class="text-right">₹{{i.mobile.prize}}</td>
+                                                      </tr>
+                                                  </tbody>
+                                              </table>
+                                          </div>
+                                      </div>
+                                      <div class="cart-body">
+                                          <div class="row">
+                                              <div class="col-md-12 order-2 order-lg-1 col-lg-5 col-xl-6">
+                                                  
+                                              </div>
+                                              <div class="col-md-12 order-1 order-lg-2 col-lg-7 col-xl-6">
+                                                  <div class="order-total table-responsive ">
+                                                      <table class="table table-borderless text-right">
+                                                          <tbody>
+                                                              <tr>
+                                                                  <td>Sub Total :</td>
+                                                                  <td>₹{{i.mobile.prize}}</td>
+                                                              </tr>
+                                                              <tr>
+                                                                  <td>Shipping :</td>
+                                                                  <td>₹0.00</td>
+                                                              </tr>
+                                                              <tr>
+                                                                  <td>Tax(18%) :</td>
+                                                                  <td>₹0.00</td>
+                                                              </tr>
+                                                              <tr>
+                                                                  <td class="f-w-7 font-18"><h4>Amount :</h4></td>
+                                                                  <td class="f-w-7 font-18"><h4>₹{{i.mobile.prize}}</h4></td>
+                                                              </tr>
+                                                          </tbody>
+                                                      </table>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="cart-footer text-right">
+                                          <a href="{% url 'delc' i.id %}" class="btn btn-info my-1">delete Cart</a>
+                                          <a href="{% url 'cout' %}" class="btn btn-success my-1">Proceed to Checkout<i class="ri-arrow-right-line ml-2"></i></a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- End col -->
+          </div>
+          <!-- End row -->
+      </div>
+      </div>
+      {% endfor %}
+      {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} <style>
+  .img-cart {
+    display: block;
+    max-width: 100px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+table tr td{
+    border:2px solid #FFFFFF;    
+}
+
+table tr th {
+    background:#    
+}
+
+.panel-shadow {
+    box-shadow: rgba(0, 0, 0, 0.3) 7px 7px 7px;
+}
+
+</style>
+
+
+
+
+<h3 class="text-center">CART</h3> <br><br>
+<div class="panel-body"> 
+  {% for i in data %}
+  <div class="table-responsive">
+  <table class="table">
+      <thead>
+      <tr>
+          <th>Product</th>
+          <th>Description</th>
+          <th>Qty</th>
+          <th>Price</th>
+          <th>Total</th>
+      </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td><img src="{{i.mobile.Mobile.url}}" class="img-cart"></td>
+              <td><strong>{{i.mobile.Name}}</strong>
+              <td>
+              <form class="form-inline">
+                  <input class="form-control" type="text" value="1"><br>
+                  <a href="" class="btn btn-info">edit</a>
+                  <a href="" class="btn btn-danger">Delete</a>
+              </form>
+              </td>
+              <td>₹{{i.mobile.prize}}</td>
+              <td>₹{{i.mobile.prize}}</td>
+          </tr>
+          <tr>
+              <td colspan="4" class="text-right"><strong>Total</strong></td>
+              <td>₹{{i.mobile.prize}}</td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+</div>
+</div>
+<a href="#" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span>&nbsp;Continue Shopping</a>
+<a href="#" class="btn btn-primary pull-right">Next<span class="glyphicon glyphicon-chevron-right"></span></a>
+</div>
+</div>
+</div>
+</div> {% endcomment %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {% comment %} <div class="row">
+      {% for i in data %}
+      <div class="col-3 "> 
+      
+      <div class="card md-3" style="width: 25rem;">
+      <img class="card-img-top" height="350px" src="{{i.mobile.Mobile.url}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{i.mobile.Name}}</h5>
+        <h6 class="card-text"><span class="material-symbols-rounded">
+          currency_rupee
+          </span>{{i.mobile.prize}}</h6>
+      </div>
+      <div class="footer">
+        <a href="{% url 'pro' i.mobile.id %}" class="btn btn-block btn-primary mb-1 ml-1">delete</a>
+        <a href="{% url 'pro' i.mobile.id %}" class="btn btn-block btn-warning mb-1 ml-1">Place Order</a>
+
+      </div>
+    </div>
+    
+    </div>
+    {% endfor %}
+    </div> {% endcomment %}
+

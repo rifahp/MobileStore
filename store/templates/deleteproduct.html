@@ -1,0 +1,38 @@
+{% extends 'navbar.html' %}
+{% block nav %}
+<h1 class="bg-danger text-center">Confirm Delete</h1>
+{% if messages %}
+        
+{% for i in messages %}
+
+ {% if i.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+ <div class="alert alert-success alert-dismissible">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong>success!!</strong>Delete SUCCESSFULL
+  {{i}}
+ </div>
+ {%endif%}
+ {% if i.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+ <div class="alert alert-danger alert-dismissible">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong>success!!</strong>Delete FAILED
+
+  {{i}}
+ </div>
+
+ {%endif%}
+ {%endfor%}
+ {%endif%}
+<h4>do you really want to delete this?</h4>
+{% if object.image %}
+<div class="container">
+      <img class="card-img-top" src="{{object.image.url}}" alt="Card image cap">
+      {% endif %}
+      <form  method="post">
+        {% csrf_token %}
+        <div class="container">
+            <button class="btn-danger">YES</button>
+        </div>
+      </form>
+</div>
+{% endblock %}
